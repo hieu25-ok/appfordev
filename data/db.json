@@ -1,0 +1,59 @@
+{
+  "ingredients": [
+    {
+      "id": "ing-salt",
+      "name": "salt",
+      "createdAt": "2026-04-12T00:00:00.000Z",
+      "updatedAt": "2026-04-12T00:00:00.000Z"
+    },
+    {
+      "id": "ing-sugar",
+      "name": "sugar",
+      "createdAt": "2026-04-12T00:00:00.000Z",
+      "updatedAt": "2026-04-12T00:00:00.000Z"
+    },
+    {
+      "id": "ing-pepper",
+      "name": "pepper",
+      "createdAt": "2026-04-12T00:00:00.000Z",
+      "updatedAt": "2026-04-12T00:00:00.000Z"
+    },
+    {
+      "id": "ing-beef",
+      "name": "beef",
+      "createdAt": "2026-04-12T00:00:00.000Z",
+      "updatedAt": "2026-04-12T00:00:00.000Z"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "rec-pepper-beef",
+      "name": "Pepper Beef",
+      "description": "A simple savory beef recipe.",
+      "instructions": [
+        "Season the beef with salt and pepper.",
+        "Cook until browned and tender.",
+        "Rest briefly before serving."
+      ],
+      "ingredients": [
+        {
+          "ingredientId": "ing-beef",
+          "quantity": 500,
+          "unit": "g"
+        },
+        {
+          "ingredientId": "ing-salt",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "ingredientId": "ing-pepper",
+          "quantity": 1,
+          "unit": "tsp"
+        }
+      ],
+      "createdAt": "2026-04-12T00:00:00.000Z",
+      "updatedAt": "2026-04-12T00:00:00.000Z"
+    }
+  ]
+}
