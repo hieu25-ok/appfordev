@@ -41,14 +41,6 @@ recipesRouter.post('/', async (req, res, next) => {
   }
 });
 
-recipesRouter.get('/search/by-ingredients', async (req, res, next) => {
-  try {
-    res.json(await listRecipes(req.query));
-  } catch (error) {
-    next(error);
-  }
-});
-
 recipesRouter.get('/:id', async (req, res, next) => {
   try {
     res.json(await getRecipeById(req.params.id));

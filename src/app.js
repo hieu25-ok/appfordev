@@ -2,9 +2,20 @@ import express from 'express';
 import { ingredientsRouter } from './routes/ingredients.js';
 import { recipesRouter } from './routes/recipes.js';
 
+const ALLOWED_ORIGIN = process.env.CORS_ORIGIN || '*';
+
+function corsMiddleware(_req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+}
+
 export function createApp() {
   const app = express();
 
+  app.use(corsMiddleware);
+  app.options('*', (_req, res) => res.sendStatus(204));
   app.use(express.json());
 
   app.get('/', (_req, res) => {

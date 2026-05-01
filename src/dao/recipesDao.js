@@ -1,12 +1,16 @@
 import { store } from '../data/store.js';
 import { httpError } from '../utils/httpError.js';
 
-function hydrateRecipe(recipe, ingredients) {
+function buildIngredientMap(ingredients) {
+  return new Map(ingredients.map((ing) => [ing.id, ing]));
+}
+
+function hydrateRecipe(recipe, ingredientMap) {
   return {
     ...recipe,
     ingredients: recipe.ingredients.map((entry) => ({
       ...entry,
-      ingredient: ingredients.find((item) => item.id === entry.ingredientId) || null
+      ingredient: ingredientMap.get(entry.ingredientId) || null
     }))
   };
 }
@@ -47,7 +51,8 @@ export async function listRecipes(query = {}) {
     });
   }
 
-  return recipes.map((recipe) => hydrateRecipe(recipe, data.ingredients));
+  const ingredientMap = buildIngredientMap(data.ingredients);
+  return recipes.map((recipe) => hydrateRecipe(recipe, ingredientMap));
 }
 
 export async function getRecipeById(id) {
@@ -58,7 +63,7 @@ export async function getRecipeById(id) {
     throw httpError(404, 'Recipe not found');
   }
 
-  return hydrateRecipe(recipe, data.ingredients);
+  return hydrateRecipe(recipe, buildIngredientMap(data.ingredients));
 }
 
 export async function createRecipe(recipeInput) {
@@ -75,7 +80,7 @@ export async function createRecipe(recipeInput) {
 
   data.recipes.push(recipe);
   await store.write(data);
-  return hydrateRecipe(recipe, data.ingredients);
+  return hydrateRecipe(recipe, buildIngredientMap(data.ingredients));
 }
 
 export async function updateRecipe(id, recipeInput) {
@@ -96,7 +101,7 @@ export async function updateRecipe(id, recipeInput) {
 
   data.recipes[index] = recipe;
   await store.write(data);
-  return hydrateRecipe(recipe, data.ingredients);
+  return hydrateRecipe(recipe, buildIngredientMap(data.ingredients));
 }
 
 export async function deleteRecipe(id) {
