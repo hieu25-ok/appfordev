@@ -23,6 +23,12 @@
       "name": "beef",
       "createdAt": "2026-04-12T00:00:00.000Z",
       "updatedAt": "2026-04-12T00:00:00.000Z"
+    },
+    {
+      "id": "ing-29b60f86-f14f-46dd-95d8-971594605001",
+      "name": "chicken",
+      "createdAt": "2026-05-07T09:41:31.912Z",
+      "updatedAt": "2026-05-07T09:41:31.912Z"
     }
   ],
   "recipes": [

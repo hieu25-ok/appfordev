@@ -1,6 +1,10 @@
 import express from 'express';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import { ingredientsRouter } from './routes/ingredients.js';
 import { recipesRouter } from './routes/recipes.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const ALLOWED_ORIGIN = process.env.CORS_ORIGIN || '*';
 
@@ -16,18 +20,8 @@ export function createApp() {
 
   app.use(corsMiddleware);
   app.options('*', (_req, res) => res.sendStatus(204));
+  app.use(express.static(join(__dirname, '..', 'frontend')));
   app.use(express.json());
-
-  app.get('/', (_req, res) => {
-    res.json({
-      name: 'Meal Finder API',
-      version: '1.0.0',
-      resources: {
-        ingredients: '/api/ingredients',
-        recipes: '/api/recipes'
-      }
-    });
-  });
 
   app.get('/health', (_req, res) => {
     res.json({ status: 'ok' });

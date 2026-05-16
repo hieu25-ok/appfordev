@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Finder</title>
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a class="nav-brand" href="#" data-nav-home>
+        <span class="brand-icon">🍽️</span>
+        Meal Finder
+      </a>
+      <div class="nav-links">
+        <button class="nav-link active" data-nav="recipes">Recipe</button>
+        <button class="nav-link" data-nav="ingredients">Ingredient</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content" id="main-content"></main>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <div class="modal" id="modal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title"></h2>
+        <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <script src="app.js?v=5"></script>
+</body>
+</html>
