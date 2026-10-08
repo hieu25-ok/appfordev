@@ -65,7 +65,8 @@ function recipeEmoji(id) {
 function toast(msg, type = 'success') {
   const icons = { success: '✓', error: '✕', warning: '⚠' };
   const t = mkEl(`<div class="toast ${type}">
-    <span>${icons[type] || '✓'}</span><span>${esc(msg)}</span>
+    <span>${icons[type] || '✓'}</span>
+    <span>${esc(msg)}</span>
   </div>`);
   document.getElementById('toast-container').appendChild(t);
   setTimeout(() => t.remove(), 3000);

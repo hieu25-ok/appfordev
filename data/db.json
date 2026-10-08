@@ -1,65 +1,52 @@
 {
   "ingredients": [
     {
-      "id": "ing-salt",
+      "id": "ing-0972b0e3-b7d0-47bf-bb37-2756339ff5e2",
       "name": "salt",
-      "createdAt": "2026-04-12T00:00:00.000Z",
-      "updatedAt": "2026-04-12T00:00:00.000Z"
+      "createdAt": "2026-07-09T13:00:23.555Z",
+      "updatedAt": "2026-07-09T13:00:23.555Z"
     },
     {
-      "id": "ing-sugar",
-      "name": "sugar",
-      "createdAt": "2026-04-12T00:00:00.000Z",
-      "updatedAt": "2026-04-12T00:00:00.000Z"
-    },
-    {
-      "id": "ing-pepper",
-      "name": "pepper",
-      "createdAt": "2026-04-12T00:00:00.000Z",
-      "updatedAt": "2026-04-12T00:00:00.000Z"
-    },
-    {
-      "id": "ing-beef",
-      "name": "beef",
-      "createdAt": "2026-04-12T00:00:00.000Z",
-      "updatedAt": "2026-04-12T00:00:00.000Z"
-    },
-    {
-      "id": "ing-29b60f86-f14f-46dd-95d8-971594605001",
+      "id": "ing-67b126a4-69b9-42f9-8734-674ed9213b4e",
       "name": "chicken",
-      "createdAt": "2026-05-07T09:41:31.912Z",
-      "updatedAt": "2026-05-07T09:41:31.912Z"
+      "createdAt": "2026-07-09T13:08:55.235Z",
+      "updatedAt": "2026-07-09T13:08:55.235Z"
+    },
+    {
+      "id": "ing-c378fb5a-3e71-41ad-b6e3-5a1412fbb096",
+      "name": "beef",
+      "createdAt": "2026-07-09T13:24:50.802Z",
+      "updatedAt": "2026-07-09T13:24:50.802Z"
+    },
+    {
+      "id": "ing-7ffa64c3-b720-4534-8d36-ae5572c8e57c",
+      "name": "sugar",
+      "createdAt": "2026-07-09T14:47:53.843Z",
+      "updatedAt": "2026-07-09T14:47:53.843Z"
     }
   ],
   "recipes": [
     {
-      "id": "rec-pepper-beef",
-      "name": "Pepper Beef",
-      "description": "A simple savory beef recipe.",
+      "id": "rec-7efe6667-baed-45b8-b7ef-2a229f02abfd",
+      "name": "chicken salt",
+      "description": "",
       "instructions": [
-        "Season the beef with salt and pepper.",
-        "Cook until browned and tender.",
-        "Rest briefly before serving."
+        "bnn"
       ],
       "ingredients": [
         {
-          "ingredientId": "ing-beef",
+          "ingredientId": "ing-0972b0e3-b7d0-47bf-bb37-2756339ff5e2",
+          "quantity": 10,
+          "unit": "gr"
+        },
+        {
+          "ingredientId": "ing-67b126a4-69b9-42f9-8734-674ed9213b4e",
           "quantity": 500,
-          "unit": "g"
-        },
-        {
-          "ingredientId": "ing-salt",
-          "quantity": 1,
-          "unit": "tsp"
-        },
-        {
-          "ingredientId": "ing-pepper",
-          "quantity": 1,
-          "unit": "tsp"
+          "unit": "gr"
         }
       ],
-      "createdAt": "2026-04-12T00:00:00.000Z",
-      "updatedAt": "2026-04-12T00:00:00.000Z"
+      "createdAt": "2026-07-09T15:12:48.926Z",
+      "updatedAt": "2026-07-10T18:09:59.884Z"
     }
   ]
 }
